@@ -30,8 +30,10 @@ function ensureAuthenticated(
             role
         }
         return next()
-        
+
     }catch (error){
         throw new AppError("invalid JWT token", 401)
     }
 }
+
+export {ensureAuthenticated}
