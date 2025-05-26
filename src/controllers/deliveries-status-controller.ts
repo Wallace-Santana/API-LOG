@@ -1,7 +1,7 @@
 import { Request, Response} from "express"
 import { prisma } from "@/database/prisma"
 import { z } from "zod"
-import exp from "constants"
+
 
 class DeliveriesStatusController{
     async update (request: Request, response: Response){
@@ -20,6 +20,13 @@ class DeliveriesStatusController{
             },
             where:{
                 id,
+            }
+        })
+
+        await prisma.deliveryLog.create({
+            data:{
+                deliveryId: id,
+                description: status,
             }
         })
 
