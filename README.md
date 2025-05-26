@@ -74,7 +74,7 @@ API RESTful para gerenciamento de entregas de encomendas, construída com Node.j
 1. Clone o repositório:
 
 \`\`\`bash
-git clone https://github.com/seu-usuario/seu-repo.git
+git clone https://github.com/Wallace-Santana/API-LOG.git
 cd seu-repo
 \`\`\`
 
