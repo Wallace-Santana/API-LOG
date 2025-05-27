@@ -73,69 +73,85 @@ API RESTful para gerenciamento de entregas de encomendas, construída com Node.j
 
 1. Clone o repositório:
 
-\`\`\`bash
+```bash
 git clone https://github.com/Wallace-Santana/API-LOG.git
-cd seu-repo
-\`\`\`
 
+```
 2. Instale as dependências:
 
-\`\`\`bash
+```bash
+# Usando NPM
 npm install
-# ou
-yarn
-\`\`\`
 
-3. Configure o ambiente:
+# Ou usando Yarn
+yarn install
+```
 
-Crie um arquivo `.env` na raiz do projeto:
+3. Configure as variáveis de ambiente:
 
-\`\`\`env
-DATABASE_URL="postgresql://admin:admin@localhost:5432/deliveries_db?schema=public"
-JWT_SECRET="sua_chave_secreta"
-\`\`\`
+Crie um arquivo `.env` com base no `.env.example`:
 
-4. Configure o Prisma:
+4. Suba o banco de dados com Docker:
 
-\`\`\`bash
-npx prisma generate
-npx prisma migrate dev
-\`\`\`
-
-5. Suba o banco de dados com Docker Compose:
-
-\`\`\`bash
+```bash
 docker-compose up -d
-\`\`\`
+```
+
+5. Inicie o Prisma Studio para visualizar os dados:
+
+```bash
+npx prisma migrate dev
+
+npx prisma studio 
+
+```
+6. Suba o banco de dados com Docker Compose:
+
+```bash
+docker-compose up -d
+```
 
 O banco estará disponível em: `localhost:5432`  
 Usuário: `admin`  
 Senha: `admin`  
 Database: `deliveries_db`
 
-6. Inicie a aplicação:
+7. Execute o servidor:
 
-\`\`\`bash
+```bash
 npm run dev
-# ou
-yarn dev
-\`\`\`
+```
 
-7. Execute os testes:
+8. Execute os testes:
 
-\`\`\`bash
+```bash
 npm run test
 # ou
 yarn test
-\`\`\`
+```
+## 🧪 Testes com Insomnia
 
+Importe o arquivo `.json` do Insomnia (fornecido neste projeto) para testar os endpoints de forma prática. Inclui exemplos de:
+
+- Registro de usuário
+- Login
+- Rotas autenticadas (entregas, logs, etc)
+
+## 📂 Funcionalidades
+
+- ✅ Cadastro e login de usuários com JWT
+- ✅ Criptografia de senhas com bcrypt
+- ✅ Middleware de autenticação por token
+- ✅ Registro e consulta de entregas
+- ✅ Registro de logs das entregas
+- ✅ Interface com Prisma Studio
 
 ## 📌 Scripts no package.json
 
 - \`dev\`: Inicia o servidor em modo desenvolvimento com TSX.
 - \`test\`: Roda os testes com Jest.
-- \`prisma generate\`: Gera o client do Prisma.
-- \`prisma migrate dev\`: Executa as migrations.
+- \` npx prisma studio\`: Gera o client do Prisma.
+- \` npx  prisma migrate dev\`: Executa as migrations.
 
 ---
 
